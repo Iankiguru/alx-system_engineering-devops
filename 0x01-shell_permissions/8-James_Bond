@@ -1,2 +1,2 @@
 #!/bin/bash
-if chmod ugo=,o+r hello | grep -q "mode of 'hello' changed"; then echo "Permissions set to 007 for file hello."; fi
+chmod 007 hello
