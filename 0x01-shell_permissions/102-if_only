@@ -1,9 +1,2 @@
 #!/bin/bash
-if [ "$(stat -c '%U' hello)" == "guillaume" ]
-then
-	chown betty hello
-	echo "File owner changed to betty."
-else
-	echo " File is not owned by guillaume."
-
-fi
+chown -from=guillaume betty hello
