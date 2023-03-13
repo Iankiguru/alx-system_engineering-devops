@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "Enter input string " | rev
+rev
