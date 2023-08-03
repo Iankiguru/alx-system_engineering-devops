@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A Bash script that displays listening ports and the corresponding programs:
+# That only shows listening sockets
+# That shows the PID and name of the program to which each socket belongs
+
+if ! command -v lsof &>/dev/null; then
+    echo "Error: lsof command not found. Please install lsof."
+    exit 1
+fi
+
+sudo lsof -i -P -n | grep LISTEN
+
