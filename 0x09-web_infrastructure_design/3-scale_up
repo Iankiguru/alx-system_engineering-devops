@@ -1,0 +1,17 @@
+Split Components with HAproxy Cluster for Web Infrastructure.
+
+Components and Their Roles
+1.Additional Load Balancer (HAproxy):
+Why: To create a load balancer cluster for high availability and fault tolerance.
+2.Split Components:
+-Web Server: To serve static files and handle initial user requests.
+-Application Server: To process dynamic content and business logic.
+-Database Server: To store and manage application data.
+
+Specifics
+1.Load Balancer Cluster (HAproxy):
+-Load Balancer 1 and Load Balancer 2 are configured as a cluster to share the load and provide redundancy.
+-Why Cluster: To ensure that if one load balancer fails, the other can take over, minimizing downtime.
+2.Split Components:
+-Why: To allow each server to specialize in its role, making it easier to scale and optimize each component independently.
+https://imgur.com/a/UgARMrY

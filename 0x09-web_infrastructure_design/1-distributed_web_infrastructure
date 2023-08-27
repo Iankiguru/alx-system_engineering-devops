@@ -1,0 +1,42 @@
+https://imgur.com/a/8KSPSY1
+Components and Their Roles
+Load Balancer (HAproxy):
+Why: To distribute incoming web traffic across multiple servers to ensure that no single server is overwhelmed.
+
+Distribution Algorithm: Round Robin. It cycles through the servers in order, distributing each new connection to the next server in the list.
+Active-Active vs Active-Passive: Configured for an Active-Active setup where all servers are used to service requests.
+
+Web Server (Nginx):
+Why: To serve static files and proxy requests that require dynamic processing to the application server.
+
+Application Server:
+Why: To process dynamic content, business logic, and interact with the database.
+
+Application Files (Code Base):
+Why: Houses the website's code, including HTML, CSS, JavaScript, and server-side scripts.
+
+Database (MySQL):
+Why: To store, retrieve, and manage data.
+Primary-Replica Cluster: There is a Primary (Master) and one or more Replica (Slave) nodes. The Primary handles all writes, while reads can be offloaded to Replicas.
+Specifics
+
+Distribution Algorithm:
+Round Robin: It's simple and doesn't require knowledge about the current load on each server.
+Active-Active vs Active-Passive:
+Active-Active: All servers are active and share the load equally.
+Active-Passive: One server is active while others are on standby.
+Database Primary-Replica Cluster:
+Primary (Master): Handles write operations.
+Replica (Slave): Handles read operations.
+
+Issues
+SPOF (Single Points of Failure):
+1.Load Balancer: If it fails, the entire system is inaccessible.
+2.Database: If the Primary node fails, writes can't be performed.
+
+Security Issues:
+1.No Firewall: Exposed to various attacks.
+2.No HTTPS: Data is transferred in plaintext.
+
+No Monitoring:
+1.Cannot identify system performance issues or failures in real-time.

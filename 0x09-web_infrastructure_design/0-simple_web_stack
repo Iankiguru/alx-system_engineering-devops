@@ -1,0 +1,38 @@
+https://imgur.com/a/azGjXY4
+
+One-Server Web Infrastructure for www.foobar.com.
+Domain Name Resolution Process
+1.User Enters URL: The user types www.foobar.com into the browser's search bar.
+2.Browser Cache Check: The browser first looks in its own cache to see if it already knows the IP address corresponding to www.foobar.com.
+3.Operating System Cache Check: If the browser doesn't have it, the operating system will then check its cache.
+4.DNS Resolver and Root Server: If the OS also doesn't have it, the DNS resolver queries the root server. The root server doesn't directly know the IP but points the resolver to the relevant Top-Level Domain (TLD) server.
+5.TLD Server and Authoritative Name Server: The TLD server points the resolver to the authoritative name server, which finally provides the IP address for www.foobar.com.
+6.Caching: Throughout this process, the resolver caches the IP addresses it learns for future use.
+7.Browser Access: Finally, the IP address is sent back to the browser, allowing it to access the website.
+This process happens in milliseconds and is a great example of distributed computing at work.
+
+Types of Servers
+1.Web Server: Serves static content like HTML, CSS, images, etc., to the client.
+2.Application Server: Handles server-side scripting and can alter the static web pages based on data from a database. It can also update the code base or database.
+3.Database Server: Holds the data used by the application server for scripting.
+
+Communication Protocols
+The server communicates using the OSI model and TCP/IP protocols to ensure that data is sent and received accurately and securely.
+
+Single Points of Failure
+User's Internet Connection: If the user loses their internet connection, they can't access the server.
+Server's Internet Connection: If the server loses its internet connection, it can't respond to requests.
+Web Server Failure: If the web server software crashes, the website becomes unavailable.
+
+Scalability and Maintenance Issues
+Downtime for Updates: With a single server, downtime is unavoidable during updates. Update times are usually scheduled for off-peak hours.
+Traffic Congestion: A single server can become a bottleneck, especially during high traffic.
+
+
+Recommendations for Improvement
+Load Balancing: Introduce a load balancer to distribute incoming requests to multiple servers.
+Database Replication: Use database replication for better data availability and load distribution.
+Content Delivery Network (CDN): Use a CDN to serve static content faster to users based on their geographic location.
+Monitoring and Alerts: Implement real-time monitoring and alerts for server health.
+Auto-scaling: Implement an auto-scaling solution to automatically add or remove servers based on real-time demands.
+By addressing these issues and implementing these recommendations, you can make the server infrastructure more robust, scalable, and reliable.

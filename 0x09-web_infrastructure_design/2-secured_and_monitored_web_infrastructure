@@ -1,0 +1,31 @@
+https://imgur.com/a/gUiNhiV
+Secure and Monitored Three-Server Web Infrastructure Design for www.foobar.com
+
+Components and Their Roles
+Firewalls (x3):
+What Firewalls Are For: They act as a barrier between your internal network and incoming traffic from external sources.
+Why: To block unauthorized access and only allow permitted traffic.
+
+SSL Certificate:
+Why: To encrypt data that is being sent over the network.
+Why HTTPS: It ensures that the data between the user and the server is encrypted and cannot be easily intercepted.
+
+Monitoring Clients (x3):
+Why: To collect data and metrics for system monitoring.
+What Monitoring Is Used For: To track the performance, errors, and other important metrics.
+
+Data Collection: These clients collect data like CPU usage, memory, QPS (Queries Per Second), and send it to a centralized monitoring service like Sumo Logic.
+
+Specifics
+Monitoring Web Server QPS:
+Configure your monitoring client to specifically track the QPS metric on the web server. This usually involves setting a rule or query in your monitoring solution to collect and report this metric.
+
+Issues
+1.SSL Termination at Load Balancer:
+Why an Issue: If SSL is terminated at the load balancer, then traffic between the load balancer and internal servers is not encrypted, posing a security risk.
+
+2.Single MySQL Server for Writes:
+Why an Issue: If this server fails, the application will not be able to perform any write operations, leading to service disruption.
+
+3.Same Components on All Servers:
+Why an Issue: This does not allow for specialized optimization and poses a risk if a common vulnerability is discovered in one of the components.
