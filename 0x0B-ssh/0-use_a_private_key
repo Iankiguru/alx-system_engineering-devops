@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Define the server's IP address
+server_ip="100.25.161.59"
+
+ssh -i ~/.ssh/school ubuntu@$server_ip
+
+exit
+
