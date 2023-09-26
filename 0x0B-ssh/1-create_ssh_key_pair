@@ -1,16 +1,3 @@
 #!/usr/bin/env bash
-
-# Define the key file name
-key_file="school"
-
-# Define the passphrase
-passphrase="betty"
-
-# Generate the RSA key pair
-ssh-keygen -t rsa -b 4096 -f "$key_file" -N "$passphrase"
-
-# Output a message to confirm the key pair generation
-echo "RSA key pair 'school' with passphrase 'betty' has been created."
-
-# List the generated key files
-ls -l "$key_file" "$key_file.pub"
+# Creates an RSA key pair with the passphrase betty
+ssh-keygen -f school -b 4096 -N betty
