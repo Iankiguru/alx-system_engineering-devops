@@ -1,28 +1,6 @@
-# First, make sure ufw is installed. If not, install it:
-sudo apt-get update
-sudo apt-get install ufw
-
-# Reset ufw to its default settings (if needed):
-sudo ufw reset
-
-# Set the default incoming policy to block:
 sudo ufw default deny incoming
-
-#Set the default outgoing policy to allow : 
 sudo ufw default allow outgoing
-
-# Allow SSH (port 22):
-sudo ufw allow 22/tcp
-
-# Allow HTTPS (port 443):
-sudo ufw allow 443/tcp
-
-# Allow HTTP (port 80):
-sudo ufw allow 80/tcp
-
-# Enable the firewall (this will prompt you to confirm):
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
 sudo ufw enable
-
-# Check the status of ufw to verify the rules:
-sudo ufw status
-
